@@ -472,38 +472,42 @@
     <div class="panel">
       <div class="corner-tr"></div><div class="corner-br"></div>
       <div class="step-label">Step 02</div>
-      <h2>Build the output</h2>
-      <p class="desc">Paste a template above, upload one from disk, or write your own. This is what actually gets sent to generate your result.</p>
+      <h2>Use your template in your favorite LLM</h2>
+      <p class="desc">Copy or download the generated prompt blueprint template from Step 01, then paste it into your favorite LLM model to generate your result.</p>
 
-      <div class="row" style="margin-top:0;margin-bottom:14px;">
+      <div class="tip-note" style="margin-bottom:0;">
+        <strong>Next step:</strong> use the Copy or Download .md button from Step 01, then paste the template into your preferred LLM model such as ChatGPT, Claude, Gemini, or another provider.
+      </div>
+
+      <div class="row" style="display:none;">
         <label class="field-label" style="margin:0;">Prompt template</label>
       </div>
-      <textarea id="buildInput" placeholder="Paste or upload a filled-in template here..."></textarea>
+      <textarea id="buildInput" placeholder="Paste or upload a filled-in template here..." style="display:none;"></textarea>
 
-      <div class="row">
+      <div class="row" style="display:none;">
         <button class="ghost file-btn">
           Upload template file
           <input type="file" id="fileUpload" accept=".txt,.md">
         </button>
         <button class="primary" id="genOutputBtn">Generate Output</button>
       </div>
-      <div class="status" id="buildStatus"></div>
+      <div class="status" id="buildStatus" style="display:none;"></div>
 
-      <label class="field-label" style="margin-top:20px;">Output</label>
-      <div class="tab-bar">
+      <label class="field-label" style="margin-top:20px;display:none;">Output</label>
+      <div class="tab-bar" style="display:none;">
         <button class="tab-btn active" id="tabPreviewBtn" type="button">Preview</button>
         <button class="tab-btn" id="tabCodeBtn" type="button">Code</button>
         <div class="tab-spacer"></div>
         <button class="open-tab-btn" id="openPreviewBtn" type="button" style="display:none;">Open in new tab ↗</button>
       </div>
-      <div class="preview-pane" id="previewPane">
+      <div class="preview-pane" id="previewPane" style="display:none;">
         <div class="preview-empty" id="previewEmpty">Your generated app, document, or content will preview here...</div>
         <iframe class="preview-frame" id="previewFrame" sandbox="allow-scripts"></iframe>
         <div class="preview-text" id="previewText"></div>
       </div>
       <textarea id="outputBox" readonly style="display:none;" placeholder="Your generated app, document, or content will appear here..."></textarea>
 
-      <div class="row">
+      <div class="row" style="display:none;">
         <button class="ghost" id="copyOutputBtn">Copy code</button>
         <button class="ghost" id="downloadOutputBtn">Download .md</button>
       </div>
@@ -527,7 +531,7 @@
           <td id="draftModel">—</td><td id="draftIn">—</td><td id="draftOut">—</td><td id="draftTotal">—</td><td id="draftCost">—</td>
         </tr>
         <tr>
-          <td class="step-name">02 · Build output</td>
+          <td class="step-name">02 · Use in LLM</td>
           <td id="buildModel">—</td><td id="buildIn">—</td><td id="buildOut">—</td><td id="buildTotal">—</td><td id="buildCost">—</td>
         </tr>
         <tr class="total-row">
